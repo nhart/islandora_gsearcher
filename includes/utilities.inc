@@ -90,8 +90,8 @@ function islandora_gsearcher_speak_to_gsearch($pid, $opp) {
   if ($response->code != 200) {
     watchdog(
       'Islandora GSearcher',
-      'GSearch did not return 200 when asked to @verb @pid.',
-      array('@verb' => $verb, '@pid' => $pid),
+      'GSearch did not return 200 (@code) when asked to @verb @pid.',
+      array('@verb' => $verb, '@pid' => $pid, '@code' => $response->code),
       WATCHDOG_ERROR
     );
   }
